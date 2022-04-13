@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ask Megamind</title>
+    <link rel="shortcut icon" href="megamindlogo.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="megamind.css">
+    <script src="megamind.js"></script>
+</head>
+<body>
+    <a style="padding-bottom:25px; display: flex; justify-content: center;">
+        <img id="megamindimage" src="megamind.png">
+        <b><p class="speech" id="bubble">Ask me a yes/no question</p></b>
+    </a>
+
+    <div style="display: flex; justify-content: center;">
+        <button id="refresh" title="Reset" type="button" onclick="reset()">✕</button>
+        <input id="questionbox" type="text" placeholder="Ask Me Your Question" autofocus>
+        <button id="askQuestion" title="Ask" type="button" onclick="ask()">➜</button>
+    </div>
+
+    <script>
+        var enterQuestion = document.getElementById("questionbox");
+        enterQuestion.addEventListener("keydown", function (i) {
+            if (i.code == "Enter") {
+                ask();
+            }
+        })
+    </script>
+</body>
+</html>
